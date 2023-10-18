@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/PDigitator/rental-car/static/css/main.b5320759.css",
+    "main.js": "/PDigitator/rental-car/static/js/main.07d3183d.js",
+    "index.html": "/PDigitator/rental-car/index.html",
+    "main.b5320759.css.map": "/PDigitator/rental-car/static/css/main.b5320759.css.map",
+    "main.07d3183d.js.map": "/PDigitator/rental-car/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5320759.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
