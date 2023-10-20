@@ -8,7 +8,7 @@ const SectionWrap = styled.section`
 `;
 
 const SectionWrapHome = styled(SectionWrap)`
-  /* max-width: 1440px; */
+  /* max-width: 1440px; */ //!
   margin: 0 auto;
 
   background: radial-gradient(
@@ -28,7 +28,7 @@ const Container = styled.div`
 const ContainerHome = styled(Container)`
   padding: 60px 128px;
   background-color: transparent;
-  height: 600px;
+  height: 900px;
 
   background-image: url(${BgImage});
   background-size: contain;
