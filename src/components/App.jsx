@@ -26,9 +26,3 @@ const App = () => {
 };
 
 export default App;
-
-{
-  /* <Route path="catalog" element={<CatalogPage />} />
-        <Route path="favorites" element={<FavoritesPage />} />
-        <Route path="*" element={<Navigate to="/" />} /> */
-} //!
