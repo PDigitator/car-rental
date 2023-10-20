@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
 import {
-  SectionWrapper,
-  SectionWrapperHome,
+  SectionWrap,
+  SectionWrapHome,
   Container,
   ContainerHome,
   Title,
@@ -12,19 +12,19 @@ const Section = ({ page, title, children }) => {
   return (
     <>
       {page === 'home' ? (
-        <SectionWrapperHome>
+        <SectionWrapHome>
           <ContainerHome>
             {title && <Title>{title}</Title>}
             {children}
           </ContainerHome>
-        </SectionWrapperHome>
+        </SectionWrapHome>
       ) : (
-        <SectionWrapper>
+        <SectionWrap>
           <Container>
             {title && <Title>{title}</Title>}
             {children}
           </Container>
-        </SectionWrapper>
+        </SectionWrap>
       )}
     </>
   );

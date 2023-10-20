@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import BgImage from '../../images/bg-image.png'; //!
+import BgImage from '../../images/bg-image.png';
 import { staticTheme } from 'theme';
 
-const SectionWrapper = styled.section`
-  padding: 0;
+const SectionWrap = styled.section`
+  margin: 0 auto;
+  background-color: ${staticTheme.colors.accent};
 `;
 
-const SectionWrapperHome = styled(SectionWrapper)`
-  padding: 150px 0;
+const SectionWrapHome = styled(SectionWrap)`
   /* max-width: 1440px; */
   margin: 0 auto;
 
@@ -26,7 +26,7 @@ const Container = styled.div`
 `;
 
 const ContainerHome = styled(Container)`
-  padding: 0 128px;
+  padding: 60px 128px;
   background-color: transparent;
   height: 600px;
 
@@ -35,6 +35,17 @@ const ContainerHome = styled(Container)`
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
+
+  animation: scale 1s ${staticTheme.timingFunction.cubicBezier};
+
+  @keyframes scale {
+    0% {
+      background-size: 25%;
+    }
+    100% {
+      background-size: 100%;
+    }
+  }
 `;
 
 const Title = styled.h1`
@@ -50,4 +61,4 @@ const Title = styled.h1`
   margin: -1px;
 `;
 
-export { SectionWrapper, SectionWrapperHome, Container, ContainerHome, Title };
+export { SectionWrap, SectionWrapHome, Container, ContainerHome, Title };
