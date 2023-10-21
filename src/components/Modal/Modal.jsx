@@ -41,16 +41,7 @@ const Modal = ({ name, onClose, children }) => {
     name === 'sidebar' ? (
       <OverlaySideBar onClick={handleOverlayClick}>
         <ModalWrapSideBar>
-          <Button
-            style={{
-              position: 'absolute',
-              top: '16px',
-              right: '16px',
-            }}
-            name="close"
-            type="button"
-            onClick={onClose}
-          >
+          <Button name="close" type="button" onClick={onClose}>
             <IconWrap>
               <IconClose />
             </IconWrap>
@@ -61,7 +52,14 @@ const Modal = ({ name, onClose, children }) => {
       </OverlaySideBar>
     ) : (
       <Overlay onClick={handleOverlayClick}>
-        <ModalWrap>{children}</ModalWrap>
+        <ModalWrap>
+          <Button name="close" type="button" onClick={onClose}>
+            <IconWrap>
+              <IconClose />
+            </IconWrap>
+          </Button>
+          {children}
+        </ModalWrap>
       </Overlay>
     ),
     modalRoot

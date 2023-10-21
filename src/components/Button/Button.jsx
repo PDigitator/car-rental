@@ -56,28 +56,6 @@ const Button = ({ name, type, text, onClick, children }) => {
   }
 
   return <>{BtnComponent}</>;
-
-  // return (
-  //   <>
-  //     {name === 'load' ? (
-  //       <BtnLearn type={type} onClick={onClick} aria-label="Learn more">
-  //         {text && text}
-  //       </BtnLearn>
-  //     ) : name === 'learn' ? (
-  //       <BtnLoad type={type} onClick={onClick} aria-label="Load more">
-  //         {text && text}
-  //       </BtnLoad>
-  //     ) : name === 'search' ? (
-  //       <BtnSearch type={type} onClick={onClick} aria-label="Search">
-  //         {text && text}
-  //       </BtnSearch>
-  //     ) : (
-  //       <Btn type={type} onClick={onClick}>
-  //         {text && text}
-  //       </Btn>
-  //     )}
-  //   </>
-  // ); //!
 };
 
 Button.propTypes = {
