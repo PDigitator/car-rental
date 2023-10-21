@@ -7,14 +7,14 @@ import {
   BtnSearch,
 } from 'components/Button/Button.styled';
 
-const Button = ({ name, type, text, onClick }) => {
+const Button = ({ name, type, text, onClick, children }) => {
   let BtnComponent;
 
   switch (name) {
     case 'load':
       BtnComponent = (
         <BtnLearn type={type} onClick={onClick} aria-label="Learn more">
-          {text && { text }}
+          {text && text}
         </BtnLearn>
       );
       break;
@@ -22,7 +22,7 @@ const Button = ({ name, type, text, onClick }) => {
     case 'learn':
       BtnComponent = (
         <BtnLoad type={type} onClick={onClick} aria-label="Load more">
-          {text && { text }}
+          {text && text}
         </BtnLoad>
       );
       break;
@@ -30,7 +30,7 @@ const Button = ({ name, type, text, onClick }) => {
     case 'search':
       BtnComponent = (
         <BtnSearch type={type} onClick={onClick} aria-label="Search">
-          {text && { text }}
+          {text && text}
         </BtnSearch>
       );
       break;
@@ -38,7 +38,8 @@ const Button = ({ name, type, text, onClick }) => {
     default:
       BtnComponent = (
         <Btn type={type} onClick={onClick}>
-          {text && { text }}
+          {text && text}
+          {children}
         </Btn>
       );
       break;
@@ -50,19 +51,19 @@ const Button = ({ name, type, text, onClick }) => {
   //   <>
   //     {name === 'load' ? (
   //       <BtnLearn type={type} onClick={onClick} aria-label="Learn more">
-  //         {text && { text }}
+  //         {text && text}
   //       </BtnLearn>
   //     ) : name === 'learn' ? (
   //       <BtnLoad type={type} onClick={onClick} aria-label="Load more">
-  //         {text && { text }}
+  //         {text && text}
   //       </BtnLoad>
   //     ) : name === 'search' ? (
   //       <BtnSearch type={type} onClick={onClick} aria-label="Search">
-  //         {text && { text }}
+  //         {text && text}
   //       </BtnSearch>
   //     ) : (
   //       <Btn type={type} onClick={onClick}>
-  //         {text && { text }}
+  //         {text && text}
   //       </Btn>
   //     )}
   //   </>
@@ -72,8 +73,9 @@ const Button = ({ name, type, text, onClick }) => {
 Button.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
+  text: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Button;

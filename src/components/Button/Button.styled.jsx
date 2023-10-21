@@ -5,11 +5,15 @@ const Btn = styled.button`
   padding: 0;
 
   border: none;
-  border-radius: 12px;
   cursor: pointer;
 
   font-family: inherit;
   background-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: ${staticTheme.colors.accentHover};
+  }
 `;
 
 const BtnLoad = styled(Btn)`
@@ -38,6 +42,7 @@ const BtnLearn = styled(Btn)`
   max-width: 274px;
   margin: 0 auto;
   padding: 12px 0;
+  border-radius: 12px;
 
   background-color: ${staticTheme.colors.accent};
   color: ${staticTheme.colors.txtTertiary};

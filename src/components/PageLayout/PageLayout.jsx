@@ -1,20 +1,29 @@
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
-// import { Header, Container, List, StyledNavLink } from './Layout.styled';
-// import Loader from 'components/Loader';
-import Header from 'components/Header/Header';
-import SideBar from 'components/SideBar/SideBar';
+import Header from 'components/Header';
+import SideBar from 'components/SideBar';
+import Modal from 'components/Modal';
 
-const MainLayout = () => {
+const PageLayout = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(prevState => !prevState);
+  };
   return (
     <>
-      <SideBar />
-      <Header />
-      <div>
-        <Outlet />
-      </div>
+      {showModal && (
+        <Modal onClose={toggleModal}>
+          <SideBar />
+        </Modal>
+      )}
+
+      <Header onOpen={toggleModal} />
+
+      <Outlet />
     </>
   );
 };
 
-export default MainLayout;
+export default PageLayout;

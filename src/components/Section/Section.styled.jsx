@@ -8,7 +8,6 @@ const SectionWrap = styled.section`
 `;
 
 const SectionWrapHome = styled(SectionWrap)`
-  /* max-width: 1440px; */ //!
   margin: 0 auto;
 
   background: radial-gradient(
