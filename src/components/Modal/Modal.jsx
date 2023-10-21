@@ -3,11 +3,16 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 
-import { Overlay, ModalWrap } from 'components/Modal/Modal.styled';
+import {
+  Overlay,
+  OverlaySideBar,
+  ModalWrap,
+  ModalWrapSideBar,
+} from 'components/Modal/Modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
 
-const Modal = ({ onClose, children }) => {
+const Modal = ({ name, onClose, children }) => {
   useEffect(() => {
     const handleKeydown = evt => {
       if (evt.code === 'Escape') {
@@ -29,16 +34,36 @@ const Modal = ({ onClose, children }) => {
   };
 
   return createPortal(
-    <Overlay onClick={handleOverlayClick}>
-      <ModalWrap>{children}</ModalWrap>
-    </Overlay>,
+    name === 'sidebar' ? (
+      <OverlaySideBar onClick={handleOverlayClick}>
+        <ModalWrapSideBar>{children}</ModalWrapSideBar>
+      </OverlaySideBar>
+    ) : (
+      <Overlay onClick={handleOverlayClick}>
+        <ModalWrap>{children}</ModalWrap>
+      </Overlay>
+    ),
     modalRoot
   );
 };
 
 Modal.propTypes = {
+  name: PropTypes.string,
   children: PropTypes.node.isRequired,
   onClose: PropTypes.func.isRequired,
 };
 
 export default Modal;
+
+// createPortal(
+//   name === 'sidebar' ? (
+//     <OverlaySideBar onClick={handleOverlayClick}>
+//       <ModalWrapSideBar>{children}</ModalWrapSideBar>
+//     </OverlaySideBar>
+//   ) : (
+//     <Overlay onClick={handleOverlayClick}>
+//       <ModalWrap>{children}</ModalWrap>
+//     </Overlay>
+//   ),
+//   modalRoot
+// );
