@@ -1,56 +1,44 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-// import UserNav from 'components/UserNav/UserNav';
-// import LogoutBtn from 'components/LogoutBtn/LogoutBtn';
+import { IconLogo } from 'components/Header/Header.styled';
+import {
+  IconWrap,
+  StyledNavLink,
+} from 'components/HomeContent/HomeContent.styled';
+import { Nav, NavItem } from './SideBar.styled';
 
-// import * as s from './SideBar.styled';
-
-// const SideBar = ({ isSmallScreen, onSideBar, onRedirect }) => {
-//   return (
-//     <>
-//       <s.SideBar>
-//         <s.LogoWrap>
-//           <s.IconWrap>
-//             <s.IconLogo />
-//           </s.IconWrap>
-//           {isSmallScreen && (
-//             <s.CloseBtn
-//               type="button"
-//               aria-label="Close"
-//               onClick={() => {
-//                 onSideBar();
-//               }}
-//             >
-//               <s.IconWrap>
-//                 <s.IconClose />
-//               </s.IconWrap>
-//             </s.CloseBtn>
-//           )}
-//         </s.LogoWrap>
-//         <s.SideBarLabel>User Panel</s.SideBarLabel>
-//         <UserNav onRedirect={onRedirect} />
-//         <LogoutBtn />
-//       </s.SideBar>
-//     </>
-//   );
-// };
-
-// SideBar.propTypes = {
-//   isSmallScreen: PropTypes.bool.isRequired,
-//   onSideBar: PropTypes.func.isRequired,
-//   onRedirect: PropTypes.func.isRequired,
-// };
-
-// export default SideBar;
-
-const SideBar = () => {
+const SideBar = onClose => {
   return (
     <>
-      <div>
-        <p>SideBar</p>
-      </div>
+      <IconWrap>
+        <IconLogo />
+      </IconWrap>
+
+      <Nav>
+        <ul>
+          <NavItem>
+            <StyledNavLink to="/" onClick={onClose}>
+              Home
+            </StyledNavLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavLink to="/catalog" onClick={onClose}>
+              Catalog
+            </StyledNavLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavLink to="/favorites" onClick={onClose}>
+              Favorites
+            </StyledNavLink>
+          </NavItem>
+        </ul>
+      </Nav>
     </>
   );
+};
+
+SideBar.propTypes = {
+  onClose: PropTypes.func.isRequired,
 };
 
 export default SideBar;

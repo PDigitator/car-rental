@@ -5,6 +5,7 @@ import {
   BtnLoad,
   BtnLearn,
   BtnSearch,
+  BtnClose,
 } from 'components/Button/Button.styled';
 
 const Button = ({ name, type, text, onClick, children }) => {
@@ -13,7 +14,7 @@ const Button = ({ name, type, text, onClick, children }) => {
   switch (name) {
     case 'load':
       BtnComponent = (
-        <BtnLearn type={type} onClick={onClick} aria-label="Learn more">
+        <BtnLearn type={type} onClick={onClick} aria-label={name}>
           {text && text}
         </BtnLearn>
       );
@@ -21,7 +22,7 @@ const Button = ({ name, type, text, onClick, children }) => {
 
     case 'learn':
       BtnComponent = (
-        <BtnLoad type={type} onClick={onClick} aria-label="Load more">
+        <BtnLoad type={type} onClick={onClick} aria-label={name}>
           {text && text}
         </BtnLoad>
       );
@@ -29,15 +30,24 @@ const Button = ({ name, type, text, onClick, children }) => {
 
     case 'search':
       BtnComponent = (
-        <BtnSearch type={type} onClick={onClick} aria-label="Search">
+        <BtnSearch type={type} onClick={onClick} aria-label={name}>
           {text && text}
         </BtnSearch>
       );
       break;
 
+    case 'close':
+      BtnComponent = (
+        <BtnClose type={type} onClick={onClick} aria-label={name}>
+          {text && text}
+          {children}
+        </BtnClose>
+      );
+      break;
+
     default:
       BtnComponent = (
-        <Btn type={type} onClick={onClick}>
+        <Btn type={type} onClick={onClick} aria-label={name}>
           {text && text}
           {children}
         </Btn>

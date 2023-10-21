@@ -1,10 +1,10 @@
+import Section from 'components/Section';
+
 const FavoritesPage = () => {
   return (
-    <>
-      <div>
-        <p>FavoritesPage</p>
-      </div>
-    </>
+    <Section title="Your favorite cars">
+      <p>FavoritesPage</p>
+    </Section>
   );
 };
 

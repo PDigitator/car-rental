@@ -8,7 +8,7 @@ const OverlaySideBar = styled.div`
   width: 100vw;
   height: 100vh;
 
-  background-color: ${staticTheme.colors.accent};
+  background-color: ${staticTheme.colors.txtSecondary};
 `;
 
 const Overlay = styled(OverlaySideBar)`
@@ -18,11 +18,8 @@ const Overlay = styled(OverlaySideBar)`
 `;
 
 const ModalWrap = styled.div`
-  /* max-width: calc(100vw - 48px);
-  max-height: calc(100vh - 24px); */
-
-  width: 335px;
-  min-height: 155px;
+  max-width: 541px;
+  min-height: 155px; //!
   padding: 40px;
 
   border-radius: 24px;
@@ -32,29 +29,17 @@ const ModalWrap = styled.div`
 const ModalWrapSideBar = styled.div`
   position: absolute;
 
-  /* max-width: calc(100vw - 48px);
-  max-height: calc(100vh - 24px); */
+  min-width: 400px;
+  height: 100vh;
+  padding: 60px 40px;
 
-  width: 335px;
-  min-height: 155px;
-  padding: 40px;
-
-  border-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
   background-color: ${staticTheme.colors.txtTertiary};
 
-  /* left: 0; */
+  left: 0;
 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #ffffff;
-  border: 1px solid #dce3e5cc;
-  border-radius: 24px;
-  box-shadow: 0px 4px 57px 0px rgba(17, 17, 17, 0.05);
-  z-index: 1000;
-  transition: transform 1250ms ease-in-out;
-
-  /* animation: slidein 250ms ${staticTheme.timingFunction.cubicBezier};
+  animation: slidein 250ms ${staticTheme.timingFunction.cubicBezier};
 
   @keyframes slidein {
     from {
@@ -63,7 +48,7 @@ const ModalWrapSideBar = styled.div`
     to {
       left: 0;
     }
-  } */
+  }
 `;
 
 export { Overlay, OverlaySideBar, ModalWrap, ModalWrapSideBar };

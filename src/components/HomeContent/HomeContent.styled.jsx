@@ -9,6 +9,7 @@ import { ReactComponent as Approved } from '../../icons/approved.svg';
 import { ReactComponent as Support } from '../../icons/support.svg';
 
 const TopWrap = styled.div`
+  margin-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,7 +42,7 @@ const Slogan = styled.p`
 const StyledNavLink = styled(NavLink)`
   display: block;
   max-width: 274px;
-  margin: 50px auto 0;
+  margin: 0 auto;
   padding: 12px 0;
 
   border-radius: 12px;

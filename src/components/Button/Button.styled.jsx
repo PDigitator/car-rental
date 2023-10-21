@@ -68,4 +68,10 @@ const BtnSearch = styled(BtnLearn)`
   padding: 14px 0;
 `;
 
-export { Btn, BtnLearn, BtnLoad, BtnSearch };
+const BtnClose = styled(Btn)`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+`;
+
+export { Btn, BtnLearn, BtnLoad, BtnSearch, BtnClose };

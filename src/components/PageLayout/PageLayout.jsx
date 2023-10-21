@@ -15,7 +15,7 @@ const PageLayout = () => {
     <>
       {showModal && (
         <Modal name="sidebar" onClose={toggleModal}>
-          <SideBar />
+          <SideBar onClose={toggleModal} />
         </Modal>
       )}
 

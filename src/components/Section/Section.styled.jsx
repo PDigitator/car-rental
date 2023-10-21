@@ -3,13 +3,14 @@ import BgImage from '../../images/bg-image.png';
 import { staticTheme } from 'theme';
 
 const SectionWrap = styled.section`
+  height: 100vh;
   margin: 0 auto;
   background-color: ${staticTheme.colors.accent};
 `;
 
 const SectionWrapHome = styled(SectionWrap)`
+  height: 100vh;
   margin: 0 auto;
-
   background: radial-gradient(
     at top left,
     ${staticTheme.colors.bgInput} 0%,
