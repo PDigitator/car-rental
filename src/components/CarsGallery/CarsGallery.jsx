@@ -19,9 +19,6 @@ CarsGallery.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      //   webformatURL: PropTypes.string.isRequired,
-      //   largeImageURL: PropTypes.string.isRequired,
-      //   tags: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
 };
