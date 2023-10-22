@@ -17,10 +17,11 @@ import {
   OptionsTxt,
 } from 'components/CarsGalleryItem/CarsGalleryItem.styled';
 import { IconWrap } from 'components/HomeContent/HomeContent.styled';
+import CarModal from 'components/CarModal';
 
 const CarsGalleryItem = ({ element }) => {
   const [showModal, setShowModal] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false); //!
+  const [isFavorite, setIsFavorite] = useState(false); //TODO:
 
   const {
     id,
@@ -47,18 +48,11 @@ const CarsGalleryItem = ({ element }) => {
     setIsFavorite(prevState => !prevState);
   };
 
-  const handleFavorite = e => {
-    // e.stopPropagation();
-    // setIsFavorite(element.id);
-  }; //!
-
   return (
     <>
       <Card>
         <Button name="favorite" type="button" onClick={toggleFavorite}>
-          <IconWrap>
-            <IconFavorite />
-          </IconWrap>
+          <IconWrap>{!isFavorite && <IconFavorite />}</IconWrap>
         </Button>
 
         <Thumb>
@@ -113,8 +107,7 @@ const CarsGalleryItem = ({ element }) => {
 
       {showModal && (
         <Modal onClose={toggleModal}>
-          <p>Modal</p>
-          {/* <SideBar onClose={toggleModal} /> */}
+          <CarModal card={element} />
         </Modal>
       )}
     </>
@@ -122,11 +115,7 @@ const CarsGalleryItem = ({ element }) => {
 };
 
 CarsGalleryItem.propTypes = {
-  element: PropTypes.shape({
-    // webformatURL: PropTypes.string.isRequired,
-    // largeImageURL: PropTypes.string.isRequired,
-    // tags: PropTypes.string.isRequired,
-  }).isRequired,
+  element: PropTypes.shape.isRequired,
 };
 
 export default CarsGalleryItem;
