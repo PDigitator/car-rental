@@ -3,7 +3,6 @@ import BgImage from '../../images/bg-image.png';
 import { staticTheme } from 'theme';
 
 const SectionWrap = styled.section`
-  height: 100vh;
   margin: 0 auto;
   background-color: ${staticTheme.colors.accent};
 `;

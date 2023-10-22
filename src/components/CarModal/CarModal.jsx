@@ -145,7 +145,7 @@ const CarModal = ({ card }) => {
 };
 
 CarModal.propTypes = {
-  onClose: PropTypes.func.isRequired,
+  card: PropTypes.shape.isRequired,
 };
 
 export default CarModal;

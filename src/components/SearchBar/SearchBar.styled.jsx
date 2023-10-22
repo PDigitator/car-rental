@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { staticTheme } from 'theme';
 
 const SearchBarWrap = styled.div`
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
   height: 74px;
   width: 705px;
 

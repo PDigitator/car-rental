@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 
 import Button from 'components/Button';
 import Modal from 'components/Modal';
@@ -112,10 +111,6 @@ const CarsGalleryItem = ({ element }) => {
       )}
     </>
   );
-};
-
-CarsGalleryItem.propTypes = {
-  element: PropTypes.shape.isRequired,
 };
 
 export default CarsGalleryItem;
