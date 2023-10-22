@@ -1,9 +1,11 @@
 import Section from 'components/Section';
+import CatalogContent from 'components/CatalogContent';
 
 const CatalogPage = () => {
   return (
     <Section title="Car rental catalog">
-      <p>CatalogPage</p>
+      <p>FilterBar</p>
+      <CatalogContent />
     </Section>
   );
 };

@@ -6,6 +6,7 @@ import {
   BtnLearn,
   BtnSearch,
   BtnClose,
+  BtnFavirite,
 } from 'components/Button/Button.styled';
 
 const Button = ({ name, type, text, onClick, children }) => {
@@ -14,17 +15,17 @@ const Button = ({ name, type, text, onClick, children }) => {
   switch (name) {
     case 'load':
       BtnComponent = (
-        <BtnLearn type={type} onClick={onClick} aria-label={name}>
+        <BtnLoad type={type} onClick={onClick} aria-label={name}>
           {text && text}
-        </BtnLearn>
+        </BtnLoad>
       );
       break;
 
     case 'learn':
       BtnComponent = (
-        <BtnLoad type={type} onClick={onClick} aria-label={name}>
+        <BtnLearn type={type} onClick={onClick} aria-label={name}>
           {text && text}
-        </BtnLoad>
+        </BtnLearn>
       );
       break;
 
@@ -42,6 +43,15 @@ const Button = ({ name, type, text, onClick, children }) => {
           {text && text}
           {children}
         </BtnClose>
+      );
+      break;
+
+    case 'favorite':
+      BtnComponent = (
+        <BtnFavirite type={type} onClick={onClick} aria-label={name}>
+          {text && text}
+          {children}
+        </BtnFavirite>
       );
       break;
 
@@ -63,7 +73,7 @@ Button.propTypes = {
   type: PropTypes.string.isRequired,
   text: PropTypes.string,
   onClick: PropTypes.func.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default Button;

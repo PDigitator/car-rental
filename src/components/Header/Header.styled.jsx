@@ -3,6 +3,8 @@ import { ReactComponent as Logo } from '../../icons/logo.svg';
 import { staticTheme } from 'theme';
 
 const HeaderWrap = styled.header`
+  position: sticky;
+  top: 0;
   margin: 0 auto;
   background-color: ${staticTheme.colors.accent};
 `;

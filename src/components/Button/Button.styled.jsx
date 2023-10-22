@@ -17,7 +17,7 @@ const Btn = styled.button`
 `;
 
 const BtnLoad = styled(Btn)`
-  /* display: block; */ //!
+  display: block;
   margin: 100px auto 0;
   padding: 10px;
 
@@ -38,8 +38,8 @@ const BtnLoad = styled(Btn)`
 `;
 
 const BtnLearn = styled(Btn)`
-  /* display: block; */ //!
-  max-width: 274px;
+  display: block;
+  min-width: 274px;
   margin: 0 auto;
   padding: 12px 0;
   border-radius: 12px;
@@ -56,6 +56,7 @@ const BtnLearn = styled(Btn)`
 
   &:hover,
   &:focus {
+    color: ${staticTheme.colors.txtTertiary};
     background-color: ${staticTheme.colors.accentHover};
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
       0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -63,7 +64,7 @@ const BtnLearn = styled(Btn)`
 `;
 
 const BtnSearch = styled(BtnLearn)`
-  max-width: 136px;
+  min-width: 136px;
   margin: 0 auto;
   padding: 14px 0;
 `;
@@ -74,4 +75,11 @@ const BtnClose = styled(Btn)`
   right: 16px;
 `;
 
-export { Btn, BtnLearn, BtnLoad, BtnSearch, BtnClose };
+const BtnFavirite = styled(Btn)`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  color: ${staticTheme.colors.txtTertiary};
+`;
+
+export { Btn, BtnLearn, BtnLoad, BtnSearch, BtnClose, BtnFavirite };
