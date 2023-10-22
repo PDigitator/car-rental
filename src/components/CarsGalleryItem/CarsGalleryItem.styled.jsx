@@ -1,7 +1,17 @@
 import styled from 'styled-components';
+import { staticTheme } from 'theme';
 
-export const Thumb = styled.div`
+const Card = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+`;
+
+const Thumb = styled.div`
   height: 268px;
+  margin-bottom: 14px;
 
   border-radius: 14px;
   overflow: hidden;
@@ -13,29 +23,10 @@ export const Thumb = styled.div`
   }
 `;
 
-export const Image = styled.img`
+const Image = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
-`;
-
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 274px;
-  height: 426px;
-  position: relative;
-`;
-
-export const Foto = styled.img`
-  width: 274px;
-  height: 280px;
-  // flex-shrink: 0;
-  object-fit: cover;
-  // object-position: 50% 50%;
-
-  border-radius: 12px;
-
   background: linear-gradient(
     180deg,
     rgba(18, 20, 23, 0.5) 2.5%,
@@ -43,72 +34,41 @@ export const Foto = styled.img`
   );
 `;
 
-export const Description = styled.div`
-  // display: flex;
-  // justify-content: space-between;
-  color: #121417;
+const Info = styled.div`
   flex-grow: 1;
-
-  font-family: Manrope;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-
-  margin-top: 14px;
+  margin-bottom: 28px;
 `;
 
-export const MainDesctiption = styled.div`
+const ModelInfo = styled.div`
   display: flex;
   justify-content: space-between;
 
   margin-bottom: 8px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: calc(24 / 16);
 `;
 
-export const AdditionalDesctiption = styled.span`
+const Model = styled.span`
+  color: ${staticTheme.colors.accent};
+`;
+
+const Options = styled.ul`
   display: flex;
-  height: 36px;
-  overflow: hidden;
-  color: rgba(18, 20, 23, 0.5);
+  flex-wrap: wrap;
+  gap: 6px;
+`;
 
-  font-family: Manrope;
+const OptionsTxt = styled.li`
+  padding-right: 6px;
+  color: ${staticTheme.colors.txtSecondary};
   font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
+  line-height: calc(18 / 12);
+
+  &:not(:last-child) {
+    border-right: 1px solid ${staticTheme.colors.lineDivider};
+  }
 `;
 
-export const Model = styled.span`
-  color: #3470ff;
-`;
-
-// export const MainButton = styled.p`
-//   display: flex;
-//   justify-content: center;
-// `;
-
-export const IconBox = styled.div`
-  height: 16px;
-  color: rgba(18, 20, 23, 0.1);
-`;
-
-export const FavoriteContainer = styled.div`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-`;
-
-export const StyledActiveIcon = styled.div`
-  width: 18px;
-  height: 18px;
-  color: rgba(52, 112, 255, 1);
-`;
-
-export const StyledNormalIcon = styled.div`
-  width: 18px;
-  height: 18px;
-  color: rgba(255, 255, 255, 0.8);
-`;
-
-// export { Thumb, Image };
+export { Card, Thumb, Image, Info, ModelInfo, Model, Options, OptionsTxt };

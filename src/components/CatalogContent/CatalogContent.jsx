@@ -22,10 +22,6 @@ const CatalogContent = () => {
   // const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    // if (!searchQuery) {
-    //   return;
-    // }
-
     const fetchCarsData = async () => {
       setIsLoading(true);
 
@@ -58,13 +54,6 @@ const CatalogContent = () => {
 
     fetchCarsData();
   }, [currentPage]);
-
-  useEffect(() => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth',
-    });
-  }, [cars]);
 
   // const getQuery = query => {
   //   if (query === searchQuery && query !== '') return;

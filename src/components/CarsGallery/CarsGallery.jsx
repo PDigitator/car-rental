@@ -18,7 +18,7 @@ const CarsGallery = ({ data }) => {
 CarsGallery.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       //   webformatURL: PropTypes.string.isRequired,
       //   largeImageURL: PropTypes.string.isRequired,
       //   tags: PropTypes.string.isRequired,

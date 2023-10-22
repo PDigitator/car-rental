@@ -4,6 +4,7 @@ import { staticTheme } from 'theme';
 
 const HeaderWrap = styled.header`
   position: sticky;
+  z-index: 999;
   top: 0;
   margin: 0 auto;
   background-color: ${staticTheme.colors.accent};

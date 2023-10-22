@@ -4,12 +4,18 @@ import PropTypes from 'prop-types';
 import Button from 'components/Button';
 import Modal from 'components/Modal';
 import { ReactComponent as IconFavorite } from '../../icons/heart-normal.svg';
-// import {
-//   Thumb,
-//   Image,
-// } from 'components/CarsGalleryItem/CarsGalleryItem.styled';
+import noImageIcon from '../../images/noImageIcon-200x200.png';
 
-import * as s from 'components/CarsGalleryItem/CarsGalleryItem.styled';
+import {
+  Card,
+  Thumb,
+  Image,
+  Info,
+  ModelInfo,
+  Model,
+  Options,
+  OptionsTxt,
+} from 'components/CarsGalleryItem/CarsGalleryItem.styled';
 import { IconWrap } from 'components/HomeContent/HomeContent.styled';
 
 const CarsGalleryItem = ({ element }) => {
@@ -48,38 +54,62 @@ const CarsGalleryItem = ({ element }) => {
 
   return (
     <>
-      <s.Container>
+      <Card>
         <Button name="favorite" type="button" onClick={toggleFavorite}>
           <IconWrap>
             <IconFavorite />
           </IconWrap>
         </Button>
 
-        <s.Thumb>
-          <s.Image src={img} alt={`${make} ${model}`} />
-        </s.Thumb>
+        <Thumb>
+          {img ? (
+            <Image src={img} alt={`${make} ${model}`} />
+          ) : (
+            <Image src={noImageIcon} alt={`${make} ${model}`} />
+          )}
+        </Thumb>
 
-        <s.Description>
-          <s.MainDesctiption>
-            <span>
+        <Info>
+          <ModelInfo>
+            <p>
               {make}
-              <s.Model> {model}</s.Model>, {year}
-            </span>
-            <span>{rentalPrice}</span>
-          </s.MainDesctiption>
+              <Model> {model}</Model>, {year}
+            </p>
+            <p>{rentalPrice}</p>
+          </ModelInfo>
 
-          <s.AdditionalDesctiption>
-            {city} | {country} | {rentalCompany} <br />
-            {type} | {model} | {id} | {feature}
-          </s.AdditionalDesctiption>
-        </s.Description>
+          <Options>
+            <OptionsTxt>
+              <p>{city}</p>
+            </OptionsTxt>
+            <OptionsTxt>
+              <p>{country}</p>
+            </OptionsTxt>
+            <OptionsTxt>
+              <p>{rentalCompany}</p>
+            </OptionsTxt>
+            <OptionsTxt>
+              <p>{type}</p>
+            </OptionsTxt>
+            <OptionsTxt>
+              <p>{model}</p>
+            </OptionsTxt>
+            <OptionsTxt>
+              <p>{id}</p>
+            </OptionsTxt>
+            <OptionsTxt>
+              <p>{feature}</p>
+            </OptionsTxt>
+          </Options>
+        </Info>
+
         <Button
           name="learn"
           type="button"
           text="Learn more"
           onClick={toggleModal}
         />
-      </s.Container>
+      </Card>
 
       {showModal && (
         <Modal onClose={toggleModal}>
@@ -90,33 +120,6 @@ const CarsGalleryItem = ({ element }) => {
     </>
   );
 };
-
-// return (
-//   <>
-//     <Thumb>
-//       {/* <Image
-//         src={webformatURL}
-//         alt={tags}
-//         onClick={() => {
-//           onClickImage(largeImageURL, tags);
-//         }}
-//       /> */}
-//       <Button
-//         name="learn"
-//         type="button"
-//         text="Learn more"
-//         onClick={toggleModal}
-//       />
-//     </Thumb>
-
-//     {showModal && (
-//       <Modal onClose={toggleModal}>
-//         <p>Modal</p>
-//         {/* <SideBar onClose={toggleModal} /> */}
-//       </Modal>
-//     )}
-//   </>
-// );
 
 CarsGalleryItem.propTypes = {
   element: PropTypes.shape({

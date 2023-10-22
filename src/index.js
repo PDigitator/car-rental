@@ -5,9 +5,9 @@ import App from 'components/App';
 import '../src/stylesheet/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter basename="/car-rental">
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter basename="/car-rental">
+    <App />
+  </BrowserRouter>
+  // </React.StrictMode>
 );
