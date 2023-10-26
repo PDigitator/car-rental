@@ -8,7 +8,7 @@ import { ReactComponent as Time } from '../../icons/clock.svg';
 import { ReactComponent as Approved } from '../../icons/approved.svg';
 import { ReactComponent as Support } from '../../icons/support.svg';
 
-const TopWrap = styled.div`
+export const TopWrap = styled.div`
   margin-bottom: 50px;
   display: flex;
   align-items: center;
@@ -16,30 +16,30 @@ const TopWrap = styled.div`
   color: ${staticTheme.colors.accent};
 `;
 
-const IconWrap = styled.span`
+export const IconWrap = styled.span`
   display: flex;
   justify-content: center;
 `;
 
-const IconLogo = styled(Logo)`
+export const IconLogo = styled(Logo)`
   width: 108px;
   height: 108px;
 `;
 
-const Title = styled.p`
+export const Title = styled.p`
   font-size: 64px;
   font-weight: 600;
   line-height: calc(88 / 64);
   text-transform: capitalize;
 `;
 
-const Slogan = styled.p`
+export const Slogan = styled.p`
   padding-top: 18px;
   font-size: 36px;
   line-height: calc(40 / 36);
 `;
 
-const StyledNavLink = styled(NavLink)`
+export const StyledNavLink = styled(NavLink)`
   display: block;
   max-width: 274px;
   margin: 0 auto;
@@ -66,82 +66,62 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const BottomWrap = styled.div`
+export const BottomWrap = styled.div`
   margin-top: 350px;
 
   color: ${staticTheme.colors.txtTertiary};
 `;
 
-const List = styled.ul`
+export const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 20px;
 `;
 
-const Item = styled.li`
+export const Item = styled.li`
   display: flex;
   flex-direction: column;
   border: solid 2px ${staticTheme.colors.txtTertiary};
 `;
 
-const Thumb = styled.div`
+export const Thumb = styled.div`
   padding: 20px 20px 0;
 
   display: flex;
   justify-content: center;
 `;
 
-const IconOrder = styled(Order)`
+export const IconOrder = styled(Order)`
   width: 108px;
   height: 108px;
 `;
 
-const IconCredit = styled(Credit)`
+export const IconCredit = styled(Credit)`
   width: 108px;
   height: 108px;
 `;
 
-const IconTime = styled(Time)`
+export const IconTime = styled(Time)`
   width: 108px;
   height: 108px;
 `;
 
-const IconApproved = styled(Approved)`
+export const IconApproved = styled(Approved)`
   width: 108px;
   height: 108px;
 `;
 
-const IconSupport = styled(Support)`
+export const IconSupport = styled(Support)`
   width: 108px;
   height: 108px;
 `;
 
-const Info = styled.div`
+export const Info = styled.div`
   padding: 20px;
 `;
-const InfoText = styled.p`
+export const InfoText = styled.p`
   font-size: 24px;
 
   line-height: calc(28 / 24);
   text-align: center;
 `;
-
-export {
-  TopWrap,
-  IconWrap,
-  IconLogo,
-  Title,
-  Slogan,
-  StyledNavLink,
-  BottomWrap,
-  List,
-  Item,
-  Thumb,
-  IconOrder,
-  IconCredit,
-  IconTime,
-  IconApproved,
-  IconSupport,
-  Info,
-  InfoText,
-};

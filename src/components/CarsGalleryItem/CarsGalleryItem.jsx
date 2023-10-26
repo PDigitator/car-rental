@@ -2,21 +2,12 @@ import { useState } from 'react';
 
 import Button from 'components/Button';
 import Modal from 'components/Modal';
+import CarModal from 'components/CarModal';
 import { ReactComponent as IconFavorite } from '../../icons/heart-normal.svg';
 import noImageIcon from '../../images/noImageIcon-200x200.png';
 
-import {
-  Card,
-  Thumb,
-  Image,
-  Info,
-  ModelInfo,
-  Model,
-  Options,
-  OptionsTxt,
-} from 'components/CarsGalleryItem/CarsGalleryItem.styled';
 import { IconWrap } from 'components/HomeContent/HomeContent.styled';
-import CarModal from 'components/CarModal';
+import * as s from './CarsGalleryItem.styled';
 
 const CarsGalleryItem = ({ element }) => {
   const [showModal, setShowModal] = useState(false);
@@ -49,60 +40,58 @@ const CarsGalleryItem = ({ element }) => {
 
   return (
     <>
-      <Card>
-        <Button name="favorite" type="button" onClick={toggleFavorite}>
-          <IconWrap>{!isFavorite && <IconFavorite />}</IconWrap>
-        </Button>
+      <Button name="favorite" type="button" onClick={toggleFavorite}>
+        <IconWrap>{!isFavorite && <IconFavorite />}</IconWrap>
+      </Button>
 
-        <Thumb>
-          {img ? (
-            <Image src={img} alt={`${make} ${model}`} />
-          ) : (
-            <Image src={noImageIcon} alt={`${make} ${model}`} />
-          )}
-        </Thumb>
+      <s.Thumb>
+        {img ? (
+          <s.Image src={img} alt={`${make} ${model}`} />
+        ) : (
+          <s.Image src={noImageIcon} alt={`${make} ${model}`} />
+        )}
+      </s.Thumb>
 
-        <Info>
-          <ModelInfo>
-            <p>
-              {make}
-              <Model> {model}</Model>, {year}
-            </p>
-            <p>{rentalPrice}</p>
-          </ModelInfo>
+      <s.Info>
+        <s.ModelInfo>
+          <p>
+            {make}
+            <s.Model> {model}</s.Model>, {year}
+          </p>
+          <p>{rentalPrice}</p>
+        </s.ModelInfo>
 
-          <Options>
-            <OptionsTxt>
-              <p>{city}</p>
-            </OptionsTxt>
-            <OptionsTxt>
-              <p>{country}</p>
-            </OptionsTxt>
-            <OptionsTxt>
-              <p>{rentalCompany}</p>
-            </OptionsTxt>
-            <OptionsTxt>
-              <p>{type}</p>
-            </OptionsTxt>
-            <OptionsTxt>
-              <p>{model}</p>
-            </OptionsTxt>
-            <OptionsTxt>
-              <p>{id}</p>
-            </OptionsTxt>
-            <OptionsTxt>
-              <p>{feature}</p>
-            </OptionsTxt>
-          </Options>
-        </Info>
+        <s.Options>
+          <s.OptionsTxt>
+            <p>{city}</p>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
+            <p>{country}</p>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
+            <p>{rentalCompany}</p>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
+            <p>{type}</p>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
+            <p>{model}</p>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
+            <p>{id}</p>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
+            <p>{feature}</p>
+          </s.OptionsTxt>
+        </s.Options>
+      </s.Info>
 
-        <Button
-          name="learn"
-          type="button"
-          text="Learn more"
-          onClick={toggleModal}
-        />
-      </Card>
+      <Button
+        name="learn"
+        type="button"
+        text="Learn more"
+        onClick={toggleModal}
+      />
 
       {showModal && (
         <Modal onClose={toggleModal}>

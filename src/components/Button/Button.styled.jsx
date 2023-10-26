@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { staticTheme } from 'theme';
 
-const Btn = styled.button`
+export const Btn = styled.button`
   padding: 0;
 
   border: none;
@@ -16,7 +16,7 @@ const Btn = styled.button`
   }
 `;
 
-const BtnLoad = styled(Btn)`
+export const BtnLoad = styled(Btn)`
   display: block;
   margin: 100px auto 0;
   padding: 10px;
@@ -37,7 +37,7 @@ const BtnLoad = styled(Btn)`
   }
 `;
 
-const BtnLearn = styled(Btn)`
+export const BtnLearn = styled(Btn)`
   display: block;
   min-width: 274px;
   margin: 0 auto;
@@ -63,23 +63,21 @@ const BtnLearn = styled(Btn)`
   }
 `;
 
-const BtnSearch = styled(BtnLearn)`
+export const BtnSearch = styled(BtnLearn)`
   min-width: 136px;
   margin: 0 auto;
   padding: 14px 0;
 `;
 
-const BtnClose = styled(Btn)`
+export const BtnClose = styled(Btn)`
   position: absolute;
   top: 16px;
   right: 16px;
 `;
 
-const BtnFavirite = styled(Btn)`
+export const BtnFavirite = styled(Btn)`
   position: absolute;
   top: 14px;
   right: 14px;
   color: ${staticTheme.colors.txtTertiary};
 `;
-
-export { Btn, BtnLearn, BtnLoad, BtnSearch, BtnClose, BtnFavirite };

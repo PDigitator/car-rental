@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { staticTheme } from 'theme';
 
-const OverlaySideBar = styled.div`
+export const OverlaySideBar = styled.div`
   position: fixed;
   z-index: 9999;
 
@@ -13,14 +13,14 @@ const OverlaySideBar = styled.div`
   background-color: ${staticTheme.colors.txtSecondary};
 `;
 
-const Overlay = styled(OverlaySideBar)`
+export const Overlay = styled(OverlaySideBar)`
   z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const ModalWrap = styled.div`
+export const ModalWrap = styled.div`
   position: absolute;
 
   max-width: 541px;
@@ -30,7 +30,7 @@ const ModalWrap = styled.div`
   background-color: ${staticTheme.colors.txtTertiary};
 `;
 
-const ModalWrapSideBar = styled.div`
+export const ModalWrapSideBar = styled.div`
   position: absolute;
 
   min-width: 400px;
@@ -54,5 +54,3 @@ const ModalWrapSideBar = styled.div`
     }
   }
 `;
-
-export { Overlay, OverlaySideBar, ModalWrap, ModalWrapSideBar };

@@ -1,17 +1,11 @@
 import { useEffect } from 'react';
 
 import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
 
 import Button from 'components/Button';
 import { ReactComponent as IconClose } from '../../icons/x-close.svg';
 
-import {
-  Overlay,
-  OverlaySideBar,
-  ModalWrap,
-  ModalWrapSideBar,
-} from 'components/Modal/Modal.styled';
+import * as s from './Modal.styled';
 import { IconWrap } from 'components/HomeContent/HomeContent.styled';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -39,8 +33,8 @@ const Modal = ({ name, onClose, children }) => {
 
   return createPortal(
     name === 'sidebar' ? (
-      <OverlaySideBar onClick={handleOverlayClick}>
-        <ModalWrapSideBar>
+      <s.OverlaySideBar onClick={handleOverlayClick}>
+        <s.ModalWrapSideBar>
           <Button name="close" type="button" onClick={onClose}>
             <IconWrap>
               <IconClose />
@@ -48,28 +42,22 @@ const Modal = ({ name, onClose, children }) => {
           </Button>
 
           {children}
-        </ModalWrapSideBar>
-      </OverlaySideBar>
+        </s.ModalWrapSideBar>
+      </s.OverlaySideBar>
     ) : (
-      <Overlay onClick={handleOverlayClick}>
-        <ModalWrap>
+      <s.Overlay onClick={handleOverlayClick}>
+        <s.ModalWrap>
           <Button name="close" type="button" onClick={onClose}>
             <IconWrap>
               <IconClose />
             </IconWrap>
           </Button>
           {children}
-        </ModalWrap>
-      </Overlay>
+        </s.ModalWrap>
+      </s.Overlay>
     ),
     modalRoot
   );
-};
-
-Modal.propTypes = {
-  name: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  onClose: PropTypes.func.isRequired,
 };
 
 export default Modal;

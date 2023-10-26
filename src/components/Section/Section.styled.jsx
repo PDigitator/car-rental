@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import BgImage from '../../images/bg-image.png';
 import { staticTheme } from 'theme';
 
-const SectionWrap = styled.section`
+export const SectionWrap = styled.section`
   margin: 0 auto;
   background-color: ${staticTheme.colors.accent};
 `;
 
-const SectionWrapHome = styled(SectionWrap)`
+export const SectionWrapHome = styled(SectionWrap)`
   height: 100vh;
   margin: 0 auto;
   background: radial-gradient(
@@ -17,14 +17,14 @@ const SectionWrapHome = styled(SectionWrap)`
   );
 `;
 
-const Container = styled.div`
+export const Container = styled.div`
   max-width: 1440px;
   padding: 50px 128px 150px;
   margin: 0 auto;
   background-color: ${staticTheme.colors.txtTertiary};
 `;
 
-const ContainerHome = styled(Container)`
+export const ContainerHome = styled(Container)`
   padding: 60px 128px;
   background-color: transparent;
   height: 900px;
@@ -47,7 +47,7 @@ const ContainerHome = styled(Container)`
   }
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -59,5 +59,3 @@ const Title = styled.h1`
   clip-path: inset(50%);
   margin: -1px;
 `;
-
-export { SectionWrap, SectionWrapHome, Container, ContainerHome, Title };

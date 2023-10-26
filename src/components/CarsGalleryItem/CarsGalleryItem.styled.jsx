@@ -1,15 +1,7 @@
 import styled from 'styled-components';
 import { staticTheme } from 'theme';
 
-const Card = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-
-  height: 100%;
-`;
-
-const Thumb = styled.div`
+export const Thumb = styled.div`
   height: 268px;
   margin-bottom: 14px;
 
@@ -23,7 +15,7 @@ const Thumb = styled.div`
   }
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -34,12 +26,12 @@ const Image = styled.img`
   );
 `;
 
-const Info = styled.div`
+export const Info = styled.div`
   flex-grow: 1;
   margin-bottom: 28px;
 `;
 
-const ModelInfo = styled.div`
+export const ModelInfo = styled.div`
   display: flex;
   justify-content: space-between;
 
@@ -50,17 +42,17 @@ const ModelInfo = styled.div`
   line-height: calc(24 / 16);
 `;
 
-const Model = styled.span`
+export const Model = styled.span`
   color: ${staticTheme.colors.accent};
 `;
 
-const Options = styled.ul`
+export const Options = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 `;
 
-const OptionsTxt = styled.li`
+export const OptionsTxt = styled.li`
   padding-right: 6px;
   color: ${staticTheme.colors.txtSecondary};
   font-size: 12px;
@@ -70,5 +62,3 @@ const OptionsTxt = styled.li`
     border-right: 1px solid ${staticTheme.colors.lineDivider};
   }
 `;
-
-export { Card, Thumb, Image, Info, ModelInfo, Model, Options, OptionsTxt };

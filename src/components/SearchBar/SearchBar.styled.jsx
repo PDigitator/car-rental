@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { staticTheme } from 'theme';
 
-const SearchBarWrap = styled.div`
+export const SearchBarWrap = styled.div`
   display: flex;
   align-items: end;
   justify-content: space-between;
@@ -12,4 +12,3 @@ const SearchBarWrap = styled.div`
   margin: 0 auto 50px;
   background-color: ${staticTheme.colors.bgInput};
 `;
-export { SearchBarWrap };

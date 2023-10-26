@@ -1,10 +1,10 @@
 import Button from 'components/Button';
-import { SearchBarWrap } from 'components/SearchBar/SearchBar.styled';
+import * as s from 'components/SearchBar/SearchBar.styled';
 
 const SearchBar = () => {
   const onClick = () => {};
   return (
-    <SearchBarWrap>
+    <s.SearchBarWrap>
       <p>SearchBar</p>
       <Button
         name="search"
@@ -12,7 +12,7 @@ const SearchBar = () => {
         text="Search"
         onClick={onClick}
       ></Button>
-    </SearchBarWrap>
+    </s.SearchBarWrap>
   );
 };
 

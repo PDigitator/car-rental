@@ -2,13 +2,13 @@ import Button from 'components/Button';
 import { ReactComponent as IconBurger } from '../../icons/burger-menu.svg';
 
 import { IconWrap } from 'components/HomeContent/HomeContent.styled';
-import { HeaderWrap, HeaderContainer, Wrap, IconLogo } from './Header.styled';
+import * as s from './Header.styled';
 
 const Header = ({ onOpen }) => {
   return (
-    <HeaderWrap>
-      <HeaderContainer>
-        <Wrap>
+    <s.HeaderWrap>
+      <s.HeaderContainer>
+        <s.Wrap>
           <Button name="burger" type="button" onClick={() => onOpen()}>
             <IconWrap>
               <IconBurger />
@@ -16,11 +16,11 @@ const Header = ({ onOpen }) => {
           </Button>
 
           <IconWrap>
-            <IconLogo />
+            <s.IconLogo />
           </IconWrap>
-        </Wrap>
-      </HeaderContainer>
-    </HeaderWrap>
+        </s.Wrap>
+      </s.HeaderContainer>
+    </s.HeaderWrap>
   );
 };
 

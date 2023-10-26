@@ -1,80 +1,62 @@
-import {
-  TopWrap,
-  IconWrap,
-  IconLogo,
-  Title,
-  Slogan,
-  StyledNavLink,
-  BottomWrap,
-  List,
-  Item,
-  Thumb,
-  IconOrder,
-  IconCredit,
-  IconTime,
-  IconApproved,
-  IconSupport,
-  Info,
-  InfoText,
-} from './HomeContent.styled';
+import * as s from './HomeContent.styled';
 
 const HomeContent = () => {
   return (
     <>
-      <TopWrap>
-        <IconWrap>
-          <IconLogo />
-        </IconWrap>
-        <Title>easy car rental</Title>
-        <Slogan>...much easier than you thought!</Slogan>
-      </TopWrap>
+      <s.TopWrap>
+        <s.IconWrap>
+          <s.IconLogo />
+        </s.IconWrap>
+        <s.Title>easy car rental</s.Title>
+        <s.Slogan>...much easier than you thought!</s.Slogan>
+      </s.TopWrap>
 
-      <StyledNavLink to="/catalog">Let's Go!</StyledNavLink>
+      <s.StyledNavLink to="/catalog">Let's Go!</s.StyledNavLink>
 
-      <BottomWrap>
-        <List>
-          <Item>
-            <Thumb>
-              <IconOrder />
-            </Thumb>
-            <Info>
-              <InfoText>Registration online</InfoText>
-            </Info>
-          </Item>
-          <Item>
-            <Thumb>
-              <IconCredit />
-            </Thumb>
-            <Info>
-              <InfoText>Сashless payment</InfoText>
-            </Info>
-          </Item>
-          <Item>
-            <Thumb>
-              <IconTime />
-            </Thumb>
-            <Info>
-              <InfoText>Punctuality</InfoText>
-            </Info>
-          </Item>
-          <Item>
-            <Thumb>
-              <IconApproved />
-            </Thumb>
-            <Info>
-              <InfoText>Additional insurance</InfoText>
-            </Info>
-          </Item>
-          <Item>
-            <Thumb>
-              <IconSupport />
-            </Thumb>
-            <Info>
-              <InfoText>24/7 support</InfoText>
-            </Info>
-          </Item>
-        </List>
-      </BottomWrap>
+      <s.BottomWrap>
+        <s.List>
+          <s.Item>
+            <s.Thumb>
+              <s.IconOrder />
+            </s.Thumb>
+            <s.Info>
+              <s.InfoText>Registration online</s.InfoText>
+            </s.Info>
+          </s.Item>
+          <s.Item>
+            <s.Thumb>
+              <s.IconCredit />
+            </s.Thumb>
+            <s.Info>
+              <s.InfoText>Сashless payment</s.InfoText>
+            </s.Info>
+          </s.Item>
+          <s.Item>
+            <s.Thumb>
+              <s.IconTime />
+            </s.Thumb>
+            <s.Info>
+              <s.InfoText>Punctuality</s.InfoText>
+            </s.Info>
+          </s.Item>
+          <s.Item>
+            <s.Thumb>
+              <s.IconApproved />
+            </s.Thumb>
+            <s.Info>
+              <s.InfoText>Additional insurance</s.InfoText>
+            </s.Info>
+          </s.Item>
+          <s.Item>
+            <s.Thumb>
+              <s.IconSupport />
+            </s.Thumb>
+            <s.Info>
+              <s.InfoText>24/7 support</s.InfoText>
+            </s.Info>
+          </s.Item>
+        </s.List>
+      </s.BottomWrap>
     </>
   );
 };

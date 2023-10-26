@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import { IconLogo } from 'components/Header/Header.styled';
 import {
   IconWrap,
@@ -35,10 +33,6 @@ const SideBar = onClose => {
       </Nav>
     </>
   );
-};
-
-SideBar.propTypes = {
-  onClose: PropTypes.func.isRequired,
 };
 
 export default SideBar;

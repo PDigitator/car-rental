@@ -1,26 +1,16 @@
-import PropTypes from 'prop-types';
-
 import CarsGalleryItem from 'components/CarsGalleryItem';
-import { List } from 'components/CarsGallery/CarsGallery.styled';
+import * as s from './CarsGallery.styled';
 
 const CarsGallery = ({ data }) => {
   return (
-    <List>
+    <s.List>
       {data.map(element => (
-        <li key={element.id}>
+        <s.Card key={element.id}>
           <CarsGalleryItem element={element} />
-        </li>
+        </s.Card>
       ))}
-    </List>
+    </s.List>
   );
-};
-
-CarsGallery.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
 };
 
 export default CarsGallery;

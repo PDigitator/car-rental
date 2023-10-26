@@ -1,23 +1,5 @@
-import PropTypes from 'prop-types';
-
-import {
-  Card,
-  Thumb,
-  Image,
-  Info,
-  ModelInfo,
-  Model,
-  Options,
-  OptionsTxt,
-  Description,
-  Title,
-  Conditions,
-  ConditionsTxt,
-  Span,
-  RentalLink,
-} from './CarModal.styled';
-
 import noImageIcon from '../../images/noImageIcon-200x200.png';
+import * as s from './CarModal.styled';
 
 const CarModal = ({ card }) => {
   const {
@@ -45,107 +27,103 @@ const CarModal = ({ card }) => {
   const ageText = conditions[0].split(' ').splice(0, 2).join(' ');
 
   return (
-    <Card>
-      <Thumb>
+    <>
+      <s.Thumb>
         {img ? (
-          <Image src={img} alt={`${make} ${model}`} />
+          <s.Image src={img} alt={`${make} ${model}`} />
         ) : (
-          <Image src={noImageIcon} alt={`${make} ${model}`} />
+          <s.Image src={noImageIcon} alt={`${make} ${model}`} />
         )}
-      </Thumb>
+      </s.Thumb>
 
-      <Info>
-        <ModelInfo>
+      <s.Info>
+        <s.ModelInfo>
           <p>
             {make}
-            <Model> {model}</Model>, {year}
+            <s.Model> {model}</s.Model>, {year}
           </p>
-        </ModelInfo>
+        </s.ModelInfo>
 
-        <Options>
-          <OptionsTxt>
+        <s.Options>
+          <s.OptionsTxt>
             <p>{city}</p>
-          </OptionsTxt>
-          <OptionsTxt>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
             <p>{country}</p>
-          </OptionsTxt>
-          <OptionsTxt>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
             <p>Id:{id}</p>
-          </OptionsTxt>
-          <OptionsTxt>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
             <p>Year:{year}</p>
-          </OptionsTxt>
-          <OptionsTxt>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
             <p>Type:{type}</p>
-          </OptionsTxt>
-          <OptionsTxt>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
             <p>Fuel Consumption:{fuelConsumption}</p>
-          </OptionsTxt>
-          <OptionsTxt>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
             <p>Engine Size: {engineSize}</p>
-          </OptionsTxt>
-        </Options>
+          </s.OptionsTxt>
+        </s.Options>
 
-        <Description>{description}</Description>
+        <s.Description>{description}</s.Description>
 
-        <Title>Accessories and functionalities:</Title>
-        <Options>
-          <OptionsTxt>
+        <s.Title>Accessories and functionalities:</s.Title>
+        <s.Options>
+          <s.OptionsTxt>
             <p>{accessories[0]}</p>
-          </OptionsTxt>
-          <OptionsTxt>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
             <p>{accessories[1]}</p>
-          </OptionsTxt>
-          <OptionsTxt>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
             <p>{accessories[2]}</p>
-          </OptionsTxt>
-          <OptionsTxt>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
             <p>{functionalities[0]}</p>
-          </OptionsTxt>
-          <OptionsTxt>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
             <p>{functionalities[1]}</p>
-          </OptionsTxt>
-          <OptionsTxt>
+          </s.OptionsTxt>
+          <s.OptionsTxt>
             <p>{functionalities[2]}</p>
-          </OptionsTxt>
-        </Options>
+          </s.OptionsTxt>
+        </s.Options>
 
-        <Title>Rental Conditions:</Title>
+        <s.Title>Rental Conditions:</s.Title>
 
-        <Conditions>
-          <ConditionsTxt>
+        <s.Conditions>
+          <s.ConditionsTxt>
             <p>
               {ageText}
-              <Span> {age}</Span>
+              <s.Span> {age}</s.Span>
             </p>
-          </ConditionsTxt>
-          <ConditionsTxt>
+          </s.ConditionsTxt>
+          <s.ConditionsTxt>
             <p>{conditions[1]}</p>
-          </ConditionsTxt>
-          <ConditionsTxt>
+          </s.ConditionsTxt>
+          <s.ConditionsTxt>
             <p>{conditions[2]}</p>
-          </ConditionsTxt>
-          <ConditionsTxt>
+          </s.ConditionsTxt>
+          <s.ConditionsTxt>
             <p>
               Mileage:
-              <Span> {(mileage / 1000).toFixed(3).replace('.', ',')}</Span>
+              <s.Span> {(mileage / 1000).toFixed(3).replace('.', ',')}</s.Span>
             </p>
-          </ConditionsTxt>
-          <ConditionsTxt>
+          </s.ConditionsTxt>
+          <s.ConditionsTxt>
             <p>
-              Price:<Span> {rentalPrice.slice(1)}$</Span>
+              Price:<s.Span> {rentalPrice.slice(1)}$</s.Span>
             </p>
-          </ConditionsTxt>
-        </Conditions>
-      </Info>
+          </s.ConditionsTxt>
+        </s.Conditions>
+      </s.Info>
 
-      <RentalLink href="tel:+380730000000">Rental car</RentalLink>
-    </Card>
+      <s.RentalLink href="tel:+380730000000">Rental car</s.RentalLink>
+    </>
   );
-};
-
-CarModal.propTypes = {
-  card: PropTypes.shape.isRequired,
 };
 
 export default CarModal;

@@ -1,11 +1,11 @@
 import { RotatingLines } from 'react-loader-spinner';
 
 import { staticTheme } from 'theme';
-import { LoaderWrap } from 'components/Loader/Loader.styled';
+import * as s from './Loader.styled';
 
 const Loader = () => {
   return (
-    <LoaderWrap>
+    <s.LoaderWrap>
       <RotatingLines
         strokeColor={staticTheme.colors.accent}
         strokeWidth="5"
@@ -13,7 +13,7 @@ const Loader = () => {
         width="96"
         visible={true}
       />
-    </LoaderWrap>
+    </s.LoaderWrap>
   );
 };
 
