@@ -66,16 +66,13 @@ export const StyledNavLink = styled(NavLink)`
   }
 `;
 
-export const BottomWrap = styled.div`
-  margin-top: 350px;
-
-  color: ${staticTheme.colors.txtTertiary};
-`;
-
 export const List = styled.ul`
+  margin-top: 350px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 20px;
+
+  color: ${staticTheme.colors.txtTertiary};
 `;
 
 export const Item = styled.li`
